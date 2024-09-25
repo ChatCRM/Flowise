@@ -32,10 +32,10 @@ services:
             - DISABLE_FLOWISE_TELEMETRY=${DISABLE_FLOWISE_TELEMETRY}
             - MODEL_LIST_CONFIG_JSON=${MODEL_LIST_CONFIG_JSON}
         ports:
-            - '${PORT}:${PORT}'
+            - '127.0.0.1:${PORT}:${PORT}'
         volumes:
             - ~/.flowise:/root/.flowise
-        entrypoint: /bin/sh -c "sleep 3; flowise start"
+        entrypoint: /bin/sh -c "sleep 3; pnpm start"
         depends_on:
             - postgres
 
